@@ -85,11 +85,21 @@ https://templatemo.com/tm-532-next-level
           </div>
         </div>
       </div>
-      <center><button onclick="window.location.href = 'class8.html'"  style="background-color: black; opacity: 0.5; width: 20%; color: red">Class 8</button></center>
-      <center><button onclick="window.location.href = '#'"  style="background-color: black; opacity: 0.5; width: 20%; color: red">Class 9</button></center>
-      <center><button onclick="window.location.href = '#'"  style="background-color: black; opacity: 0.5; width: 20%; color: red">Class 10</button></center>
 
+      <select onchange="this.options[this.selectedIndex].value && (window.location.href = this.options[this.selectedIndex].value)" style="width: 100%; height: 5%; background: black; opacity: 0.5; color: white; font-weight: bold">
+       <option value="">Class 8</option>
+       <option value="class8.html">पाठ 15 सूरदास के पद</option>
+      </select>
 
+      <select onchange="this.options[this.selectedIndex].value && (window.location.href = this.options[this.selectedIndex].value)" style="width: 100%; height: 5%; background: black; opacity: 0.5; color: white; font-weight: bold">
+       <option value="">Class 9</option>
+       <option value="">Empty</option>
+      </select>
+
+      <select onchange="this.options[this.selectedIndex].value && (window.location.href = this.options[this.selectedIndex].value)" style="width: 100%; height: 5%; background: black; opacity: 0.5; color: white; font-weight: bold">
+       <option value="">Class 10</option>
+       <option value="">Empty</option>
+      </select>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/parallax.min.js"></script>

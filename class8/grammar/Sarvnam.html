@@ -1,0 +1,66 @@
+<html>
+
+<head>
+
+<meta charset="UTF8">
+
+<title>Page</title>
+
+</head>
+
+<body style="background: url(../../img/bac.jpg); background-size: cover">
+
+<script>
+data = {"प्रश्न 1 - सर्वनाम किसे कहते हैं?": "उत्तर - स्थान पर प्रयुक्त होने वाले शब्दों को सर्वनाम कहते हैं ; जैसे - रीता, आगरा, मेज आदि |", "प्रश्न 2 - सर्वनाम के कितने भेद होते हैं?": "सर्वनाम के 6 भेद होते हैं-\n\n1 - पुरुषवाचक सर्वनाम\n2 - निश्चयवाचक सर्वनाम\n3 - अनिश्चयवाचक सर्वनाम\n4 - प्रश्नवाचक सर्वनाम\n5 - संबंधवाचक\n6 - निजवाचक सर्वनाम", "प्रश्न 3 - पुरुषवाचक सर्वनाम किसे कहते हैं तथा उसके कितने भेद होते हैं?": "उत्तर - पुरुषवाचक सर्वनाम - वक्ता (बोलनेवाला ) या लेखक(लिखनेवाला ) अपने लिए, श्रोता (सुननेवाले ) के लिए तथा किसी अन्य व्यक्ति के लिए जिन सर्वनाम शब्दों का प्रयोग करता है, उन्हें पुरुषवाचक सर्वनाम कहते हैं ; जैसे - मैं, मैंने, मेरा, हम, हमने, हमारा, तुम, तुमने, तुम्हारा, तुम्हें, तुझे, तू, वह, उसका, वे, उनका आदि | पुरुषवाचक सर्वनाम के तीन भेद होते हैं -\n\n1 - उत्तम पुरुषवाचक सर्वनाम - वक्ता बोलते समय अपने लिए जिन सर्वनाम शब्दों का प्रयोग करता है, उन्हें पुरुष उत्तम पुरुष वाचक सर्वनाम कहते हैं ; जैसे - मैं, मेरा, मुझे, मुझको, हम, हमें, हमारा, हमको, मेरे लिए आदि |\n2 - मध्यम पुरुषवाचक सर्वनाम - वक्ता के द्वारा श्रोता के नाम के स्थान पर जिन सर्वनाम शब्दों का प्रयोग किया जाता है उन्हें मध्यम पुरुषवाचक सर्वनाम कहते हैं ; जैसे - तू, तेरा, तुझे, तुझको, तूने, तुम, तुम्हारा, तुम्हें, तुमको, तुमने, आप, आपका, आपको, आपने आदि |\n3 - अन्य पुरुषवाचक सर्वनाम - वक्ता श्रोता से बात करते समय किसी अन्य व्यक्ति के लिए जिन सर्वनाम शब्दों का प्रयोग करता है, उन्हें अन्य पुरुषवाचक सर्वनाम कहते हैं ; जैसे - वह, वे, उन्होंने, उसे, उसने, उनका, उनकी, उनके, उसका, उसकी, उसके आदि |", "प्रश्न 4 - निश्चयवाचक सर्वनाम किसे कहते हैं ? उदाहरण सहित स्पष्ट करो |": "उत्तर - वे सर्वनाम शब्द जो किसी वस्तु या प्राणी की ओर संकेत करते हैं और उसका निश्चय पूर्वक बोध कराते हैं उन्हें निश्चयवाचक सर्वनाम कहा जाता | जैसे -\n1 - वह घर किसका है?\n2 - यह पुस्तक मेरी है |\n\nपहले वाक्य में 'वह' और दूसरे वाक्य में 'यह' शब्द निश्चयवाचक सर्वनाम हैं क्योंकि ये क्रमशः घर और पुस्तक की ओर संकेत कर रहे हैं |"}
+body = document.getElementsByTagName('body')[0]
+
+for (let key in data) {
+ div = document.createElement("div")
+
+ div.style.background = "black"
+ div.style.opacity = "0.5"
+ div.style.margin = "30px"
+ div.style.width = "90%"
+ div.style.display = "block"
+ div.style.overflow = "auto"
+
+ p = document.createElement("p")
+ p.innerHTML = key
+ p.style["font-weight"] = "bold"
+ p.style["font-size"] = "250%"
+ p.style.color = "white"
+ p.style["white-space"] = "pre"
+
+ div.appendChild(p)
+
+ p = document.createElement("p")
+ p.id = key
+ p.innerHTML = " "
+ p.style["font-weight"] = "bold"
+ p.style["font-size"] = "150%"
+ p.style.color = "white"
+ p.style["white-space"] = "pre"
+
+ div.appendChild(p)
+
+ body.appendChild(div)
+
+ b = document.createElement("button")
+ b.style.background = "black"
+ b.style.opacity = "0.5"
+ b.onclick = function() { document.getElementById(key).innerHTML = data[key] }
+ b.innerHTML = "Click to see answer"
+ b.style.color = "white"
+ b.style.width = "30%"
+ b.style.height = "5%"
+ b.style.margin = "30px"
+ b.style.overflow = "hidden"
+ b.style["font-size"] = "150%"
+
+ body.appendChild(b)
+}
+</script>
+
+</body>
+
+</html>

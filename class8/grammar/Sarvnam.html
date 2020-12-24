@@ -54,7 +54,18 @@ for (let key in data) {
  b = document.createElement("button")
  b.style.background = "black"
  b.style.opacity = "0.5"
- b.onclick = function() { document.getElementById(key).innerHTML = data[key] }
+ b.onclick = function() { 
+ if (data[`${key}mode`] == undefined) {
+  document.getElementById(key).innerHTML = data[key]
+  data[`${key}mode`] = "open"
+ } else if (data[`${key}mode`] == "open") {
+  document.getElementById(key).innerHTML = " "
+  data[`${key}mode`] = "close"
+ } else {
+  document.getElementById(key).innerHTML = data[key]
+  data[`${key}mode`] = "open"
+ }
+ }
  b.innerHTML = "Click to see answer"
  b.style.color = "white"
  b.style.width = "30%"

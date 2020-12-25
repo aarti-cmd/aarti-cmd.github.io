@@ -55,15 +55,12 @@ for (let key in data) {
  b.style.background = "black"
  b.style.opacity = "0.5"
  b.onclick = function() {
- if (data[`${key}mode`] == undefined) {
+ if (document.getElementById(key).innerHTML == " ") {
   document.getElementById(key).innerHTML = data[key]
-  data[`${key}mode`] = "open"
- } else if (data[`${key}mode`] == "open") {
+  this.innerHTML = "Click to hide answer"
+ } else if (document.getElementById(key).innerHTML != " ") {
   document.getElementById(key).innerHTML = " "
-  data[`${key}mode`] = "close"
- } else {
-  document.getElementById(key).innerHTML = data[key]
-  data[`${key}mode`] = "open"
+  this.innerHTML = "Click to see answer"
  }
  }
  b.innerHTML = "Click to see answer"

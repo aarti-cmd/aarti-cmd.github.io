@@ -17,32 +17,34 @@
   data = ["निष्ठुर सी इस दुनिया में \nहोते रहते रोज हादसे, \nदुनिया ऐसे ही चलती है\nनाहक तुम घबराना मत |\n\nइस दुनिया में होती रहती \nकुछ मीठी कुछ खट्टी बातें, \nइन बातों में जानबूझकर \nअपने को उलझाना मत |\n\nमरने वाले मर जाएँगे \nजलने वाले जल जाएँगे, \nइन बातों से विचलित होकर\nनाहक तुम थम जाना मत |\n\nजल से सींची गई पौध तुम \nथोड़ी धूप सहन कर लेना, \nअपने को नाजुक ठहरा कर\nनाहक तुम मुरझाना मत |\n                               - By Arti Yadav"]
   body = document.getElementsByTagName('body')[0]
 
-  center = document.createElement("center")
+  for (poem of data) {
+   center = document.createElement("center")
 
-  div = document.createElement("div")
-  div.style.background = "rgba(0, 0, 0, 0.5)"
-  div.style.display = "inline-block"
-  div.style.overflow = "auto"
+   div = document.createElement("div")
+   div.style.background = "rgba(0, 0, 0, 0.5)"
+   div.style.display = "inline-block"
+   div.style.overflow = "auto"
 
-  p = document.createElement("p")
-  p.innerHTML = data[0]
-  p.style["font-weight"] = "bold"
-  p.style["font-size"] = "250%"
-  p.style.color = "blue"
-  p.style["animation-name"] = "color"
-  p.style["animation-duration"] = "10s"
-  p.style["animation-iteration-count"] = "infinite"
-  p.style["white-space"] = "pre-wrap"
-  p.style["white-space"] = "-moz-pre-wrap"
-  p.style["white-space"] = "-o-pre-wrap"
-  p.style["word-wrap"] = "break-word"
-       
-  div.appendChild(p)
+   p = document.createElement("p")
+   p.innerHTML = poem
+   p.style["font-weight"] = "bold"
+   p.style["font-size"] = "250%"
+   p.style.color = "blue"
+   p.style["animation-name"] = "color"
+   p.style["animation-duration"] = "10s"
+   p.style["animation-iteration-count"] = "infinite"
+   p.style["white-space"] = "pre-wrap"
+   p.style["white-space"] = "-moz-pre-wrap"
+   p.style["white-space"] = "-o-pre-wrap"
+   p.style["word-wrap"] = "break-word"
 
-  center.appendChild(div)
+   div.appendChild(p)
 
-  body.appendChild(center)
- </script>
+   center.appendChild(div)
+
+   body.appendChild(center)
+  }
+</script>
 
 </body>
 

@@ -1,0 +1,92 @@
+<html>
+
+<head>
+
+ <title>CBSE Hindi Class 9 Chapter 6 प्रेमचंद के फटे जूते</title>
+ <meta charset="UTF8">
+
+</head>
+
+<body style="background: url(../img/bac.jpg); background-size: cover">
+
+<script>
+window.onerror = function(errMsg, url, line, column, error) {
+var result = !column ? '' : '\ncolumn: ' + column;
+            result += !error;
+            document.write("Error= " + errMsg + "\nurl= " + url + "\nline= " + line + result);
+            var suppressErrorAlert = true;
+            return suppressErrorAlert;
+         };
+request = new XMLHttpRequest()
+request.open("GET", "https://raw.githubusercontent.com/aarti-cmd/aarti-cmd.github.io/master/questions.json")
+request.responseType = "json"
+request.send()
+request.onload = function() { res = request.response["class9"]["6"]; generate(res) }
+body = document.getElementsByTagName('body')[0]
+
+function generate(data) {
+for (let key in data) {
+ div = document.createElement("div")
+
+ div.style.background = "black"
+ div.style.opacity = "0.5"
+ div.style.margin = "30px"
+ div.style.width = "90%"
+ div.style.display = "block"
+ div.style.overflow = "auto"
+
+ p = document.createElement("p")
+ p.innerHTML = key
+ p.style["font-weight"] = "bold"
+ p.style["font-size"] = "250%"
+ p.style.color = "white"
+ p.style["white-space"] = "pre-wrap"
+ p.style["white-space"] = "-moz-pre-wrap"
+ p.style["white-space"] = "-o-pre-wrap"
+ p.style["word-wrap"] = "break-word"
+
+ div.appendChild(p)
+
+ p = document.createElement("p")
+ p.id = key
+ p.innerHTML = " "
+ p.style["font-weight"] = "bold"
+ p.style["font-size"] = "150%"
+ p.style.color = "white"
+ p.style["white-space"] = "pre-wrap"
+ p.style["white-space"] = "-moz-pre-wrap"
+ p.style["white-space"] = "-o-pre-wrap"
+ p.style["word-wrap"] = "break-word"
+
+ div.appendChild(p)
+
+ body.appendChild(div)
+
+ b = document.createElement("button")
+ b.style.background = "black"
+ b.style.opacity = "0.5"
+ b.onclick = function() {
+ if (document.getElementById(key).innerHTML == " ") {
+  document.getElementById(key).innerHTML = data[key]
+  this.innerHTML = "Click to hide answer"
+ } else if (document.getElementById(key).innerHTML != " ") {
+  document.getElementById(key).innerHTML = " "
+  this.innerHTML = "Click to see answer"
+ }
+ }
+ b.innerHTML = "Click to see answer"
+ b.style.color = "white"
+ b.style.width = "30%"
+ b.style.height = "5%"
+ b.style.margin = "30px"
+ b.style.overflow = "hidden"
+ b.style["font-size"] = "150%"
+
+ body.appendChild(b)
+}
+}
+</script>
+
+</body>
+
+</html>

@@ -8,15 +8,9 @@
 </head>
 
 <body style="background: url(../img/bac.jpg); background-size: cover">
+<center><img id="loading" src="../img/loading.gif" style="width: 20%"></center>
 
 <script>
-window.onerror = function(errMsg, url, line, column, error) {
-var result = !column ? '' : '\ncolumn: ' + column;
-            result += !error;
-            document.write("Error= " + errMsg + "\nurl= " + url + "\nline= " + line + result);
-            var suppressErrorAlert = true;
-            return suppressErrorAlert;
-         };
 request = new XMLHttpRequest()
 request.open("GET", "https://raw.githubusercontent.com/aarti-cmd/aarti-cmd.github.io/master/questions.json")
 request.responseType = "json"
@@ -25,6 +19,7 @@ request.onload = function() { res = request.response["class9"]["6"]; generate(re
 body = document.getElementsByTagName('body')[0]
 
 function generate(data) {
+document.getElementById("loading").remove()
 for (let key in data) {
  div = document.createElement("div")
 

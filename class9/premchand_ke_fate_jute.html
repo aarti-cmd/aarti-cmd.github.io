@@ -12,7 +12,7 @@
 
 <script>
 request = new XMLHttpRequest()
-request.open("GET", "https://raw.githubusercontent.com/aarti-cmd/aarti-cmd.github.io/master/questions.json")
+request.open("GET", "/questions.json")
 request.responseType = "json"
 request.send()
 request.onload = function() { res = request.response["class9"]["6"]; generate(res) }
